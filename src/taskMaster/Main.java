@@ -2,10 +2,13 @@ package taskMaster;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Main {
 	static TaskList tasks;
 	static Scanner sc;
+	static String commands;
 	
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
@@ -16,6 +19,20 @@ public class Main {
 		tasks.printTasks();
 		System.out.println("\nType 'help' to view all commands");
 		
+		try {
+			File source = new File("C:\\Users\\olami\\OneDrive\\Documents\\Programming\\Java\\Eclipse\\TaskMaster\\src\\taskMaster\\commands.txt");
+			Scanner reader = new Scanner(source);
+			commands = "";
+			while (reader.hasNextLine()) {
+				commands += reader.nextLine() + "\n";
+			}
+			reader.close();
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("commands.txt not found");
+		}
+		
+		
 		while(true) {
 			checkInput();
 			tasks.sort();
@@ -25,6 +42,7 @@ public class Main {
 	static void checkInput() {
 		String input = sc.nextLine();
 		if (input.equals("help")){
+			/*
 			System.out.println(
 					"add - Add one task to the list\r\n"
 					+ "addm - Add multiple tasks to the list (type 'stop' to stop adding tasks)\r\n"
@@ -33,9 +51,11 @@ public class Main {
 					+ "active - Add/remove a task from active list\r\n"
 					+ "update - Update progress of a task\r\n"
 					+ "view - View all tasks on the list\r\n"
-					+ "viewa - View all tasks on the active list\r\n"
+					+ "viewa - View all active tasks\r\n"
 					+ "(If multiple tasks share the same name, the command is performed on the most recent task)"
 					);
+			*/
+			System.out.println(commands);
 		}
 		else if (input.equals("add")){
 			tasks.addTask();

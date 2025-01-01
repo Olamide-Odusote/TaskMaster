@@ -1,4 +1,9 @@
 add - Add one task to the list
-addm - Add multiple tasks to the list
-remove - Remove one task from the list (if multiple tasks share the same name, the most recently added task is removed)
-
+addm - Add multiple tasks to the list (type 'stop' to stop adding tasks)
+remove - Remove one task from the list
+edit - Edit a task
+active - Add/remove a task from active list
+update - Update progress of a task
+view - View all tasks on the list
+viewa - View all active tasks
+(If multiple tasks share the same name, the command is performed on the most recent task)

@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class TaskList {
 	public ArrayList<Task> tasks = new ArrayList<Task>();
-	public ArrayList<Task> activeTasks = new ArrayList<Task>();
+	//public ArrayList<Task> activeTasks = new ArrayList<Task>();
     private Scanner sc;
 	
 	public TaskList(Scanner sc) 
@@ -23,8 +23,20 @@ public class TaskList {
 	
 	public void printActiveTasks() {
 		System.out.println("Active Tasks: ");
+		
+		/*
 		for(Task task : activeTasks) {
 			System.out.println(task);
+			for (Task subTask : task.getSubTasks()) {
+				System.out.println("  - " + subTask);
+			}
+		}
+		*/
+		
+		for(Task task : tasks) {
+			if (task.active()) {
+				System.out.println(task);
+			}
 			for (Task subTask : task.getSubTasks()) {
 				System.out.println("  - " + subTask);
 			}
@@ -63,7 +75,7 @@ public class TaskList {
 		else {
 			tasks.remove(taskToRemove);
 			if (taskToRemove.active()) {
-				activeTasks.remove(taskToRemove);
+				//activeTasks.remove(taskToRemove);
 			}
 			System.out.println("Task removed");
 		}
@@ -119,12 +131,12 @@ public class TaskList {
 		else {
 			if (taskToChange.active()) {
 				taskToChange.setActiveStatus(false);
-				activeTasks.remove(taskToChange);
+				//activeTasks.remove(taskToChange);
 				System.out.println("Task removed from active list");
 			}
 			else {
 				taskToChange.setActiveStatus(true);
-				activeTasks.add(taskToChange);
+				//activeTasks.add(taskToChange);
 				System.out.println("Task added to active list");
 			}
 			//checkActiveStatus(); 
@@ -166,7 +178,7 @@ public class TaskList {
 	
 	public void sort() {
 		Collections.sort(tasks);
-		Collections.sort(activeTasks);
+		//Collections.sort(activeTasks);
 	}
 	
 	/*
