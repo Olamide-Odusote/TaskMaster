@@ -1,0 +1,4 @@
+add - Add one task to the list
+addm - Add multiple tasks to the list
+remove - Remove one task from the list (if multiple tasks share the same name, the most recently added task is removed)
+
