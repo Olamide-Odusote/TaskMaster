@@ -20,7 +20,7 @@ public class Main {
 		System.out.println("\nType 'help' to view all commands");
 		
 		try {
-			File source = new File("src//taskMaster//commands.txt");
+			File source = new File("commands.txt");
 			Scanner reader = new Scanner(source);
 			commands = "";
 			while (reader.hasNextLine()) {
