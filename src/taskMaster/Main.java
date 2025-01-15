@@ -42,19 +42,7 @@ public class Main {
 	static void checkInput() {
 		String input = sc.nextLine();
 		if (input.equals("help")){
-			/*
-			System.out.println(
-					"add - Add one task to the list\r\n"
-					+ "addm - Add multiple tasks to the list (type 'stop' to stop adding tasks)\r\n"
-					+ "remove - Remove one task from the list\r\n"
-					+ "edit - Edit a task\r\n"
-					+ "active - Add/remove a task from active list\r\n"
-					+ "update - Update progress of a task\r\n"
-					+ "view - View all tasks on the list\r\n"
-					+ "viewa - View all active tasks\r\n"
-					+ "(If multiple tasks share the same name, the command is performed on the most recent task)"
-					);
-			*/
+
 			System.out.println(commands);
 		}
 		else if (input.equals("add")){

@@ -36,10 +36,11 @@ public class TaskList {
 		for(Task task : tasks) {
 			if (task.active()) {
 				System.out.println(task);
+				for (Task subTask : task.getSubTasks()) {
+					System.out.println("  - " + subTask);
+				}
 			}
-			for (Task subTask : task.getSubTasks()) {
-				System.out.println("  - " + subTask);
-			}
+			
 		}
 	}
 	
