@@ -1,6 +1,5 @@
 package taskMaster;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,7 +28,7 @@ public class Main {
 			reader.close();
 		}
 		catch (FileNotFoundException e) {
-			System.out.println("commands.txt not found");
+			System.out.println("command.txt not found");
 		}
 		
 		
