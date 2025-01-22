@@ -28,7 +28,7 @@ public class Main {
 			reader.close();
 		}
 		catch (FileNotFoundException e) {
-			System.out.println("command.txt not found");
+			System.out.println("commands.txt not found");
 		}
 		
 		
