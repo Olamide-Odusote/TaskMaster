@@ -5,13 +5,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class TaskList {
+	public static TaskList instance;
 	public ArrayList<Task> tasks = new ArrayList<Task>();
-	//public ArrayList<Task> activeTasks = new ArrayList<Task>();
     private Scanner sc;
 	
-	public TaskList(Scanner sc) 
+	private TaskList(Scanner sc) 
 	{
 		this.sc = sc;
+	}
+	
+	public static TaskList getInstance(Scanner sc) {
+		if (instance == null) {
+			instance = new TaskList(sc);
+		}
+		return instance;
 	}
 	
 	public void printTasks() {
@@ -179,7 +186,6 @@ public class TaskList {
 	
 	public void sort() {
 		Collections.sort(tasks);
-		//Collections.sort(activeTasks);
 	}
 	
 	/*

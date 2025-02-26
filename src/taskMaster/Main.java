@@ -11,7 +11,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
-		tasks = new TaskList(sc);
+		tasks = TaskList.getInstance(sc);
 		System.out.println("Start adding some tasks to create a list. Type 'stop' to stop adding tasks.");
 		
 		tasks.addTasks();
